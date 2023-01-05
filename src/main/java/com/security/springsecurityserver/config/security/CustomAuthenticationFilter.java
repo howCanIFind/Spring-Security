@@ -1,6 +1,5 @@
 package com.security.springsecurityserver.config.security;
 
-import lombok.extern.log4j.Log4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -10,7 +9,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Log4j
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     public CustomAuthenticationFilter(AuthenticationManager authenticationManager) {

@@ -31,6 +31,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    @Setter
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT true")
+    private Boolean isEnable = true;
+
     @Builder
     public User(String userEmail, String userPw){
         this.userEmail = userEmail;
