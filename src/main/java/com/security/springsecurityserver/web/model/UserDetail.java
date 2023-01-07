@@ -13,7 +13,7 @@ import java.util.Collection;
 public class UserDetail implements UserDetails {
 
     @Delegate
-    private final User user;
+    private final Users users;
     private final Collection<? extends GrantedAuthority> authorities;
 
     @Override
@@ -23,31 +23,31 @@ public class UserDetail implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getUserPw();
+        return users.getUserPw();
     }
 
     @Override
     public String getUsername() {
-        return user.getUserEmail();
+        return users.getEmail();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return user.getIsEnable();
+        return users.getIsEnable();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return user.getIsEnable();
+        return users.getIsEnable();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return user.getIsEnable();
+        return users.getIsEnable();
     }
 
     @Override
     public boolean isEnabled() {
-        return user.getIsEnable();
+        return users.getIsEnable();
     }
 }

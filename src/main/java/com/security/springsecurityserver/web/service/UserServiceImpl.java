@@ -1,6 +1,6 @@
 package com.security.springsecurityserver.web.service;
 
-import com.security.springsecurityserver.web.model.User;
+import com.security.springsecurityserver.web.model.Users;
 import com.security.springsecurityserver.web.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,17 +12,17 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
 
     @Override
-    public User login(User user) {
-        return userRepository.findByUserEmailAndUserPw(user.getUserEmail(), user.getUserPw());
+    public Users login(Users users) {
+        return userRepository.findByEmailAndUserPw(users.getEmail(), users.getUserPw());
     }
 
     @Override
-    public User createUser(User user) {
-        return userRepository.save(user);
+    public Users createUser(Users users) {
+        return userRepository.save(users);
     }
 
     @Override
-    public User findUserByUserEmail(String userEmail) {
-        return userRepository.findByUserEmail(userEmail).get();
+    public Users findUserByUserEmail(String userEmail) {
+        return userRepository.findByEmail(userEmail).get();
     }
 }

@@ -1,12 +1,12 @@
 package com.security.springsecurityserver.web.service;
 
-import com.security.springsecurityserver.web.model.User;
+import com.security.springsecurityserver.web.model.Users;
 
 public interface UserService {
 
-    User login(User user);
+    Users login(Users users);
 
-    User createUser(User user);
+    Users createUser(Users users);
 
-    User findUserByUserEmail(String userEmail);
+    Users findUserByUserEmail(String userEmail);
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Getter
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class User {
 
     @Setter
     @Column(nullable = false, unique = true, length = 50)
-    private String userEmail;
+    private String email;
 
     @Setter
     @Column(nullable = false)
@@ -36,8 +36,8 @@ public class User {
     private Boolean isEnable = true;
 
     @Builder
-    public User(String userEmail, String userPw){
-        this.userEmail = userEmail;
+    public Users(String email, String userPw){
+        this.email = email;
         this.userPw = userPw;
     }
 }
